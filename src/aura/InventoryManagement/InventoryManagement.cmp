@@ -1,0 +1,159 @@
+<!--
+ - Created by Adelchi on 16/04/2018.
+ -->
+
+<aura:component description="InventoryManagement" controller="InventoryManagementCtrl" implements="forceCommunity:searchInterface,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="newInventory" type="Inventory__c"/>
+    <aura:attribute name="simpleNewInventory" type="Inventory__c"/>
+    <aura:attribute name="newInventoryError" type="String"/>
+    <aura:attribute name="InventoryName" type="String"/>
+    <aura:attribute name="InventoryQty" type="Integer"/>
+    <aura:attribute name="BatchNr" type="String"/>
+    <aura:attribute name="ExpirationDate" type="String"/>
+    <aura:attribute name="Quantity" type="Integer"/>
+    <aura:attribute name="medicationNames" type="String[]"/>
+    <aura:attribute name="consumablesNames" type="String[]"/>
+    <aura:attribute name="consumableName" type="String"/>
+    <aura:attribute name="consQty" type="Integer"/>
+    <aura:attribute name="consBatchNr" type="String"/>
+    <aura:attribute name="consExpirationDate" type="String"/>
+    <aura:attribute name="removalReason" type="String"/>
+    <aura:attribute name="removalToggle" type="Boolean" default="false"/>
+    <aura:attribute name="addToggle" type="Boolean" default="false"/>
+    <force:recordData aura:id="InventoryRecordCreator"
+                      layoutType="FULL"
+                      targetRecord="{!v.newInventory}"
+                      targetFields="{!v.simpleNewInventory}"
+                      targetError="{!v.newInventoryError}" />
+    <div style="padding-right: 10%">
+        <div class="slds-align--absolute-center">
+            <tr >
+                <td class="slds-p-around--xx-large">
+                    <lightning:button iconName="action:upload" iconPosition="right" variant="brand" label="Add Items" onclick="{!c.toggleAddView}"></lightning:button>
+                </td>
+                <td>
+                    <div style="width: 20%"></div>
+                </td>
+                <td class="slds-p-around--xx-large">
+                    <lightning:button iconName="action:download" iconPosition="right" variant="destructive" label="Remove Items" onclick="{!c.toggleRemoveView}"></lightning:button>
+                </td>
+            </tr>
+        </div>
+
+        <div style="width: 100%; background-color: white; margin-left: 10%; padding-right: 10%">
+            <aura:if isTrue="{!v.addToggle}">
+                <tr>
+                    <td>
+                        <div class="slds-text-heading_medium slds-m-left--large slds-m-top--x-large">Medications</div>
+                        <div class="slds-m-around--xx-large" style="background-color: #fdf3e8">
+                            <div class="slds-box">
+                                <lightning:select name="MedicationNames" label="Select Item" aura:id="MedSelect" onchange="{!c.setMedicationName}">
+                                    <option></option>
+                                    <aura:iteration items="{!v.medicationNames}" var="item">
+                                        <option text="{!item.label}" value="{!item.value}" selected="{!item.selected}">{!item}</option>
+                                    </aura:iteration>
+                                </lightning:select>
+                            </div>
+                            <div class="slds-box">
+                                <ui:inputNumber aura:id="MedSelect1" label="Quantity" format=".0" value="{!v.InventoryQty}" updateOn="keyup"/>
+                            </div>
+                            <div class="slds-box">
+                                <ui:inputText aura:id="MedSelect2" label="Batch Number" value="{!v.BatchNr}" updateOn="change"/>
+                            </div>
+                            <div class="slds-box">
+                                <ui:inputDate aura:id="MedSelect3" displayDatePicker="true" label="Expiration Date" value="{!v.ExpirationDate}" updateOn="change" format="dd-MM-yyyy"/>
+                            </div>
+                            <div class="slds-box" style="background-color: white; border-color: white">
+                                <lightning:button variant="brand" label="Add Medications" onclick="{!c.addItem}"/>
+                            </div>
+                            <footer class="slds-m-bottom_x-large" style="color:#fdf3e8; background-color: white">.</footer>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="slds-text-heading_medium slds-m-left--large slds-m-top--x-large">Consumables</div>
+                        <div class="slds-m-around--xx-large" style="background-color: #fdf3e8">
+                            <div class="slds-box">
+                                <lightning:select name="consumablesNames" label="Select Item" aura:id="consSelect" onchange="{!c.setConsumableName}">
+                                    <option></option>
+                                    <aura:iteration items="{!v.consumablesNames}" var="item">
+                                        <option text="{!item.label}" value="{!item.value}" selected="{!item.selected}">{!item}</option>
+                                    </aura:iteration>
+                                </lightning:select>
+                            </div>
+                            <div class="slds-box">
+                                <ui:inputNumber label="Quantity" format=".0" value="{!v.consQty}" updateOn="keyup"/>
+                            </div>
+                            <div class="slds-box">
+                                <ui:inputText label="Batch Number" value="{!v.consBatchNr}" updateOn="change"/>
+                            </div>
+                            <div class="slds-box">
+                                <ui:inputDate displayDatePicker="true" label="Expiration Date" value="{!v.consExpirationDate}" updateOn="change" format="dd-MM-yyyy"/>
+                            </div>
+                            <div class="slds-box" style="background-color: white; border-color: white">
+                                <lightning:button variant="brand" label="Add Consumables" onclick="{!c.addConsumableItem}"/>
+                            </div>
+                            <footer class="slds-m-bottom_x-large" style="color:#fdf3e8; background-color: white">.</footer>
+                        </div>
+                    </td>
+                </tr>
+            </aura:if>
+            <aura:if isTrue="{!v.removalToggle}">
+                <tr>
+                    <td>
+                        <div class="slds-text-heading_medium slds-m-left--large slds-m-top--x-large">Medications</div>
+                        <div class="slds-m-around--xx-large" style="background-color: #fdf3e8">
+                            <div class="slds-box">
+                                <lightning:select name="MedicationNames" label="Select Item" aura:id="MedSelect" onchange="{!c.setMedicationName}">
+                                    <option></option>
+                                    <aura:iteration items="{!v.medicationNames}" var="item">
+                                        <option text="{!item.label}" value="{!item.value}" selected="{!item.selected}">{!item}</option>
+                                    </aura:iteration>
+                                </lightning:select>
+                            </div>
+                            <div class="slds-box">
+                                <ui:inputNumber label="Quantity" format=".0" value="{!v.InventoryQty}" updateOn="keyup"/>
+                            </div>
+                            <div class="slds-box">
+                                <ui:inputText label="Removal Reason" value="{!v.removalReason}" updateOn="change"/>
+                            </div>
+                            <div class="slds-box">
+                                <ui:inputDate displayDatePicker="true" label="Expiration Date" value="{!v.ExpirationDate}" updateOn="change" format="dd-MM-yyyy"/>
+                            </div>
+                            <div class="slds-box" style="background-color: white; border-color: white">
+                                <lightning:button variant="destructive" label="Remove Medications" onclick="{!c.removeItems}"/>
+                            </div>
+                            <footer class="slds-m-bottom_x-large" style="color:#fdf3e8; background-color: white">.</footer>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="slds-text-heading_medium slds-m-left--large slds-m-top--x-large">Consumables</div>
+                        <div class="slds-m-around--xx-large" style="background-color: #fdf3e8">
+                            <div class="slds-box">
+                                <lightning:select name="consumablesNames" label="Select Item" aura:id="consSelect" onchange="{!c.setConsumableName}">
+                                    <option></option>
+                                    <aura:iteration items="{!v.consumablesNames}" var="item">
+                                        <option text="{!item.label}" value="{!item.value}" selected="{!item.selected}">{!item}</option>
+                                    </aura:iteration>
+                                </lightning:select>
+                            </div>
+                            <div class="slds-box">
+                                <ui:inputNumber label="Quantity" format=".0" value="{!v.InventoryQty}" updateOn="keyup"/>
+                            </div>
+                            <div class="slds-box">
+                                <ui:inputText label="Removal Reason" value="{!v.removalReason}" updateOn="change"/>
+                            </div>
+                            <div class="slds-box">
+                                <ui:inputDate displayDatePicker="true" label="Expiration Date" value="{!v.ExpirationDate}" updateOn="change" format="dd-MM-yyyy"/>
+                            </div>
+                            <div class="slds-box" style="background-color: white; border-color: white">
+                                <lightning:button variant="destructive" label="Remove Consumables" onclick="{!c.removeConsumableItems}"/>
+                            </div>
+                            <footer class="slds-m-bottom_x-large" style="color:#fdf3e8; background-color: white">.</footer>
+                        </div>
+                    </td>
+                </tr>
+            </aura:if>
+        </div>
+    </div>
+</aura:component>

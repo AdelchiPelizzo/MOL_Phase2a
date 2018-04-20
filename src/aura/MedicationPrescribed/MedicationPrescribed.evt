@@ -1,0 +1,7 @@
+<!--
+ - Created by Adelchi on 14/04/2018.
+ -->
+
+<aura:event type="COMPONENT" description="MedicationPrescribed">
+
+</aura:event>

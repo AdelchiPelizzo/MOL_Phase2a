@@ -1,0 +1,64 @@
+<!--
+ - Created by Adelchi P on 13/04/2018.
+ -->
+
+<aura:component description="MedicationPrescription" controller="MedicationPrescriptionCtrl" implements="force:lightningQuickActionWithoutHeader,forceCommunity:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    <aura:attribute name="newMedication" type="Medication_Prescribed__c"/>
+    <aura:attribute name="simpleNewMedication" type="Medication_Prescribed__c"/>
+    <aura:attribute name="newMedicationError" type="String"/>
+    <aura:attribute name="medicationNameList" type="String[]"/>
+    <aura:attribute name="medicationName" type="String"/>
+    <aura:attribute name="batchNumber" type="String"/>
+    <aura:attribute name="qtyPrescribed" type="Integer"/>
+    <aura:attribute name="presFrequency" type="String"/>
+    <aura:attribute name="presDose" type="String"/>
+    <aura:attribute name="selItem2" type="object" access="public"/>
+    <aura:attribute name="consultationId" type="String" default="{!v.recordId}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <force:recordData aura:id="medicationRecordCreator"
+                      layoutType="FULL"
+                      targetRecord="{!v.newMedication}"
+                      targetFields="{!v.simpleNewMedication}"
+                      targetError="{!v.newMedicationError}" />
+    <div style="height: 900px; width: 900px">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container" style="max-width: 100rem !important; width:100% !important;">
+                <header class="slds-modal__header">
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">New Prescription</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <label>Prescriber</label>
+                            <c:Lookup objectName="Contact"
+                                      field_API_text="Name"
+                                      field_API_val="Id"
+                                      limit="4"
+                                      field_API_search="Name"
+                                      lookupIcon="standard:contact"
+                                      selItem="{!v.selItem2}"
+                                      placeholder="Start typing Name ..."/>
+                        </div>
+                    </div>
+                    <lightning:select name="MedicationName" label="Select Medication" aura:id="medicationField" onchange="{!c.storeMedicationName}">
+                        <option value="">-- Select --</option>
+                        <aura:iteration items="{!v.medicationNameList}" var="item">
+                            <option text="{!item}" value="{!item.value}" selected="{!item.selected}"/>
+                        </aura:iteration>
+                    </lightning:select>
+                    <lightning:input aura:id="medicationField" name="QuantityPrescribed" label="Quantity"
+                                     value="{!v.simpleNewMedication.Quantity_Prescribed__c}" required="true" onchange="{!c.storeQty}"/>
+                    <lightning:input aura:id="medicationField" name="PrescribedDose" label="Prescribed Dose"
+                                     value="{!v.simpleNewMedication.Prescribed_Dose__c}" />
+                    <lightning:input aura:id="medicationField" name="PrescriptionFrequency" label="Prescription Frequency"
+                                     value="{!v.simpleNewMedication.Prescription_Frequency__c__c}" />
+                    <lightning:input aura:id="medicationField" name="BatchNumber" label="Batch Number"
+                                     value="{!v.simpleNewMedication.Batch_Number__c}" onchange="{!c.storeBatchNumber}"/>
+                    <lightning:button label="Save Prescription" onclick="{!c.handleSavePrecription}" variant="brand" class="slds-m-top_medium"/>
+                    <lightning:button label="Cancel" onclick="{!c.cancel}" variant="brand" class="slds-m-top_medium"/>
+                </div>
+            </div>
+        </section>
+    </div>
+</aura:component>

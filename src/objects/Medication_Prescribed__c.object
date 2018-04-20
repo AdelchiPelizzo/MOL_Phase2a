@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Medication_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Medication Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Aciclovir 400mg (Box of 56)</fullName>
+                    <default>false</default>
+                    <label>Aciclovir 400mg (Box of 56)</label>
+                </value>
+                <value>
+                    <fullName>Aciclovir 800mg (Box of 35)</fullName>
+                    <default>false</default>
+                    <label>Aciclovir 800mg (Box of 35)</label>
+                </value>
+                <value>
+                    <fullName>Aciclovir Cream (Zovirax) 2g</fullName>
+                    <default>false</default>
+                    <label>Aciclovir Cream (Zovirax) 2g</label>
+                </value>
+                <value>
+                    <fullName>Adrenaline 1mg /ml of 1 In 1000</fullName>
+                    <default>false</default>
+                    <label>Adrenaline 1mg /ml of 1 In 1000</label>
+                </value>
+                <value>
+                    <fullName>Adrenaline Min-I-Jet 1 in 10,000 – 10 ml</fullName>
+                    <default>false</default>
+                    <label>Adrenaline Min-I-Jet 1 in 10,000 – 10 ml</label>
+                </value>
+                <value>
+                    <fullName>Amiodarone Hydrochloride Min-I-Jet 30mg/ml</fullName>
+                    <default>false</default>
+                    <label>Amiodarone Hydrochloride Min-I-Jet 30mg/ml</label>
+                </value>
+                <value>
+                    <fullName>Amoxicillin Capsules 500mg (Box of 21)</fullName>
+                    <default>false</default>
+                    <label>Amoxicillin Capsules 500mg (Box of 21)</label>
+                </value>
+                <value>
+                    <fullName>Anthisan Cream 30g Tube</fullName>
+                    <default>false</default>
+                    <label>Anthisan Cream 30g Tube</label>
+                </value>
+                <value>
+                    <fullName>Anusol HC Ointment 30g tube</fullName>
+                    <default>false</default>
+                    <label>Anusol HC Ointment 30g tube</label>
+                </value>
+                <value>
+                    <fullName>Atenolol 50 mg (Box of 28)</fullName>
+                    <default>false</default>
+                    <label>Atenolol 50 mg (Box of 28)</label>
+                </value>
+                <value>
+                    <fullName>Atropine Sulphate Min-I-Jet 1 mg/10 ml – 10 ml</fullName>
+                    <default>false</default>
+                    <label>Atropine Sulphate Min-I-Jet 1 mg/10 ml – 10 ml</label>
+                </value>
+                <value>
+                    <fullName>Azithromycin 500mg (Box of 3)</fullName>
+                    <default>false</default>
+                    <label>Azithromycin 500mg (Box of 3)</label>
+                </value>
+                <value>
+                    <fullName>Bactroban Ointment (Mupirocin) 15g</fullName>
+                    <default>false</default>
+                    <label>Bactroban Ointment (Mupirocin) 15g</label>
+                </value>
+                <value>
+                    <fullName>Beclomethasone 100mcg MDI</fullName>
+                    <default>false</default>
+                    <label>Beclomethasone 100mcg MDI</label>
+                </value>
+                <value>
+                    <fullName>Benoxinate Minims (Oxybuprocaine) 0.4% 1ml</fullName>
+                    <default>false</default>
+                    <label>Benoxinate Minims (Oxybuprocaine) 0.4% 1ml</label>
+                </value>
+                <value>
+                    <fullName>Benzylpenicillin Vials 600mg (Box of 2)</fullName>
+                    <default>false</default>
+                    <label>Benzylpenicillin Vials 600mg (Box of 2)</label>
+                </value>
+                <value>
+                    <fullName>Betamethasone (Betnovate Ointment) 30g</fullName>
+                    <default>false</default>
+                    <label>Betamethasone (Betnovate Ointment) 30g</label>
+                </value>
+                <value>
+                    <fullName>Bonjela Oral Gel 15g</fullName>
+                    <default>false</default>
+                    <label>Bonjela Oral Gel 15g</label>
+                </value>
+                <value>
+                    <fullName>Calamine Aqueous Cream BP 100g</fullName>
+                    <default>false</default>
+                    <label>Calamine Aqueous Cream BP 100g</label>
+                </value>
+                <value>
+                    <fullName>Calcium Gluconate Gel and Injection 25g/10%</fullName>
+                    <default>false</default>
+                    <label>Calcium Gluconate Gel and Injection 25g/10%</label>
+                </value>
+                <value>
+                    <fullName>Cavit Boxes – 4 tubes</fullName>
+                    <default>false</default>
+                    <label>Cavit Boxes – 4 tubes</label>
+                </value>
+                <value>
+                    <fullName>Ceftriaxone Vial (Rocephin)</fullName>
+                    <default>false</default>
+                    <label>Ceftriaxone Vial (Rocephin)</label>
+                </value>
+                <value>
+                    <fullName>Cetirizine Tablets 10 mg (Box of 30)</fullName>
+                    <default>false</default>
+                    <label>Cetirizine Tablets 10 mg (Box of 30)</label>
+                </value>
+                <value>
+                    <fullName>Cetrimide Cream BPC 30 g</fullName>
+                    <default>false</default>
+                    <label>Cetrimide Cream BPC 30 g</label>
+                </value>
+                <value>
+                    <fullName>Chloramphenicol 0.5% 10ml</fullName>
+                    <default>false</default>
+                    <label>Chloramphenicol 0.5% 10ml</label>
+                </value>
+                <value>
+                    <fullName>Chloramphenicol 1% - 4g</fullName>
+                    <default>false</default>
+                    <label>Chloramphenicol 1% - 4g</label>
+                </value>
+                <value>
+                    <fullName>Chlorhexidine 100ml</fullName>
+                    <default>false</default>
+                    <label>Chlorhexidine 100ml</label>
+                </value>
+                <value>
+                    <fullName>Chlorhexidine Gluconate Concentrate with Cetrimide - sachets (Tisept)</fullName>
+                    <default>false</default>
+                    <label>Chlorhexidine Gluconate Concentrate with Cetrimide - sachets (Tisept)</label>
+                </value>
+                <value>
+                    <fullName>Chlorphenamine lnj 10mg/ml (Box of 5)</fullName>
+                    <default>false</default>
+                    <label>Chlorphenamine lnj 10mg/ml (Box of 5)</label>
+                </value>
+                <value>
+                    <fullName>Chlorpromazine 25mg (Box of 28)</fullName>
+                    <default>false</default>
+                    <label>Chlorpromazine 25mg (Box of 28)</label>
+                </value>
+                <value>
+                    <fullName>Chlorpromazine Inj 50mg (Box of 10)</fullName>
+                    <default>false</default>
+                    <label>Chlorpromazine Inj 50mg (Box of 10)</label>
+                </value>
+                <value>
+                    <fullName>Cinnarizine  (Stugeron) 15mg (Box of 100)</fullName>
+                    <default>false</default>
+                    <label>Cinnarizine  (Stugeron) 15mg (Box of 100)</label>
+                </value>
+                <value>
+                    <fullName>Ciprofloxacin (Ciproxin) 500mg (Box of 10)</fullName>
+                    <default>false</default>
+                    <label>Ciprofloxacin (Ciproxin) 500mg (Box of 10)</label>
+                </value>
+                <value>
+                    <fullName>Clopidogrel 75mg (Box of 30)</fullName>
+                    <default>false</default>
+                    <label>Clopidogrel 75mg (Box of 30)</label>
+                </value>
+                <value>
+                    <fullName>Clotrimazole Cream 1% (Canesten Cream) 20g</fullName>
+                    <default>false</default>
+                    <label>Clotrimazole Cream 1% (Canesten Cream) 20g</label>
+                </value>
+                <value>
+                    <fullName>Clove Oil BP 10ml</fullName>
+                    <default>false</default>
+                    <label>Clove Oil BP 10ml</label>
+                </value>
+                <value>
+                    <fullName>Co-Amoxiclav (Augmentin) 250/125 (Box of 21)</fullName>
+                    <default>false</default>
+                    <label>Co-Amoxiclav (Augmentin) 250/125 (Box of 21)</label>
+                </value>
+                <value>
+                    <fullName>Co-Amoxiclav  (Augmentin) 500/125 (Box of 21)</fullName>
+                    <default>false</default>
+                    <label>Co-Amoxiclav  (Augmentin) 500/125 (Box of 21)</label>
+                </value>
+                <value>
+                    <fullName>Co-Codamol 8/500 (Codeine Phosphate 8 mg, Paracetamol 500mg) (Box of 100)</fullName>
+                    <default>false</default>
+                    <label>Co-Codamol 8/500 (Codeine Phosphate 8 mg, Paracetamol 500mg) (Box of 100)</label>
+                </value>
+                <value>
+                    <fullName>Daktacort Ointment 30g</fullName>
+                    <default>false</default>
+                    <label>Daktacort Ointment 30g</label>
+                </value>
+                <value>
+                    <fullName>Daktarin Oral  (Miconazole) Gel 15g</fullName>
+                    <default>false</default>
+                    <label>Daktarin Oral  (Miconazole) Gel 15g</label>
+                </value>
+                <value>
+                    <fullName>Dalteparin 1ml Inj 10,000 units/ml (Box of 5)</fullName>
+                    <default>false</default>
+                    <label>Dalteparin 1ml Inj 10,000 units/ml (Box of 5)</label>
+                </value>
+                <value>
+                    <fullName>Dalteparin Ampoules 10,000 units/ml 1ml (Box of 10)</fullName>
+                    <default>false</default>
+                    <label>Dalteparin Ampoules 10,000 units/ml 1ml (Box of 10)</label>
+                </value>
+                <value>
+                    <fullName>Diamorphine Hydrochloride 10mg (Box of 5)</fullName>
+                    <default>false</default>
+                    <label>Diamorphine Hydrochloride 10mg (Box of 5)</label>
+                </value>
+                <value>
+                    <fullName>Diazepam 5 mg/ml (Box of 10)</fullName>
+                    <default>false</default>
+                    <label>Diazepam 5 mg/ml (Box of 10)</label>
+                </value>
+                <value>
+                    <fullName>Diazepam 5 mg (Box of 28)</fullName>
+                    <default>false</default>
+                    <label>Diazepam 5 mg (Box of 28)</label>
+                </value>
+                <value>
+                    <fullName>Diazepam Rectal Tube 10 mg in 2.5 ml (Box of 5)</fullName>
+                    <default>false</default>
+                    <label>Diazepam Rectal Tube 10 mg in 2.5 ml (Box of 5)</label>
+                </value>
+                <value>
+                    <fullName>Diclofenac Inj 75mg/3 ml (Box of 10)</fullName>
+                    <default>false</default>
+                    <label>Diclofenac Inj 75mg/3 ml (Box of 10)</label>
+                </value>
+                <value>
+                    <fullName>Dihydrocodeine BP 30mg (Box of 100)</fullName>
+                    <default>false</default>
+                    <label>Dihydrocodeine BP 30mg (Box of 100)</label>
+                </value>
+                <value>
+                    <fullName>Dioralyte Oral Powder (Box of 6)</fullName>
+                    <default>false</default>
+                    <label>Dioralyte Oral Powder (Box of 6)</label>
+                </value>
+                <value>
+                    <fullName>Diprobase Cream 50 g</fullName>
+                    <default>false</default>
+                    <label>Diprobase Cream 50 g</label>
+                </value>
+                <value>
+                    <fullName>Doxycycline 100 mg (Box of 50)</fullName>
+                    <default>false</default>
+                    <label>Doxycycline 100 mg (Box of 50)</label>
+                </value>
+                <value>
+                    <fullName>E45 Cream 50 g</fullName>
+                    <default>false</default>
+                    <label>E45 Cream 50 g</label>
+                </value>
+                <value>
+                    <fullName>Erythromycin 500mg (Box of 28)</fullName>
+                    <default>false</default>
+                    <label>Erythromycin 500mg (Box of 28)</label>
+                </value>
+                <value>
+                    <fullName>Ethanol (Blue Label Vodka) 50% proof</fullName>
+                    <default>false</default>
+                    <label>Ethanol (Blue Label Vodka) 50% proof</label>
+                </value>
+                <value>
+                    <fullName>Flucloxacillin 500mg (Box of 28)</fullName>
+                    <default>false</default>
+                    <label>Flucloxacillin 500mg (Box of 28)</label>
+                </value>
+                <value>
+                    <fullName>Fluconazole 150mg (Box of 1)</fullName>
+                    <default>false</default>
+                    <label>Fluconazole 150mg (Box of 1)</label>
+                </value>
+                <value>
+                    <fullName>Flumazenil Inj 0.5mg/5ml (Box of 5)</fullName>
+                    <default>false</default>
+                    <label>Flumazenil Inj 0.5mg/5ml (Box of 5)</label>
+                </value>
+                <value>
+                    <fullName>Fucidic Acid Drops 1%</fullName>
+                    <default>false</default>
+                    <label>Fucidic Acid Drops 1%</label>
+                </value>
+                <value>
+                    <fullName>Furosemide 10mg/1ml (Box of 10)</fullName>
+                    <default>false</default>
+                    <label>Furosemide 10mg/1ml (Box of 10)</label>
+                </value>
+                <value>
+                    <fullName>Furosemide 40mg (Box of 28)</fullName>
+                    <default>false</default>
+                    <label>Furosemide 40mg (Box of 28)</label>
+                </value>
+                <value>
+                    <fullName>Gaviscon Advance Liquid  150ml</fullName>
+                    <default>false</default>
+                    <label>Gaviscon Advance Liquid  150ml</label>
+                </value>
+                <value>
+                    <fullName>Gentisone HC Ear Drop 10ml</fullName>
+                    <default>false</default>
+                    <label>Gentisone HC Ear Drop 10ml</label>
+                </value>
+                <value>
+                    <fullName>Glucagon Novo Inj 1mg</fullName>
+                    <default>false</default>
+                    <label>Glucagon Novo Inj 1mg</label>
+                </value>
+                <value>
+                    <fullName>Glucogel 25g</fullName>
+                    <default>false</default>
+                    <label>Glucogel 25g</label>
+                </value>
+                <value>
+                    <fullName>Glucose 10% IV Fluid 250ml</fullName>
+                    <default>false</default>
+                    <label>Glucose 10% IV Fluid 250ml</label>
+                </value>
+                <value>
+                    <fullName>Glucose 20% IV Fluid 500ml</fullName>
+                    <default>false</default>
+                    <label>Glucose 20% IV Fluid 500ml</label>
+                </value>
+                <value>
+                    <fullName>Glucose 5% IV Fluid 500ml</fullName>
+                    <default>false</default>
+                    <label>Glucose 5% IV Fluid 500ml</label>
+                </value>
+                <value>
+                    <fullName>GTN 0.4mcg Spray</fullName>
+                    <default>false</default>
+                    <label>GTN 0.4mcg Spray</label>
+                </value>
+                <value>
+                    <fullName>Haloperidol Injection 1 ml= 5mg (Box of 10)</fullName>
+                    <default>false</default>
+                    <label>Haloperidol Injection 1 ml= 5mg (Box of 10)</label>
+                </value>
+                <value>
+                    <fullName>Hartmann’s Infusion 500ml</fullName>
+                    <default>false</default>
+                    <label>Hartmann’s Infusion 500ml</label>
+                </value>
+                <value>
+                    <fullName>Hibiscrub Liquid 500ml</fullName>
+                    <default>false</default>
+                    <label>Hibiscrub Liquid 500ml</label>
+                </value>
+                <value>
+                    <fullName>Histoacryl Skin Adhesive</fullName>
+                    <default>false</default>
+                    <label>Histoacryl Skin Adhesive</label>
+                </value>
+                <value>
+                    <fullName>Human Actrapid Vials 100 u/ml – 10ml</fullName>
+                    <default>false</default>
+                    <label>Human Actrapid Vials 100 u/ml – 10ml</label>
+                </value>
+                <value>
+                    <fullName>Hydrocortisone Cream 1% - 15 g</fullName>
+                    <default>false</default>
+                    <label>Hydrocortisone Cream 1% - 15 g</label>
+                </value>
+                <value>
+                    <fullName>Hydrocortisone Injection Powder 100 mg vial with 2 ml (Box of 1)</fullName>
+                    <default>false</default>
+                    <label>Hydrocortisone Injection Powder 100 mg vial with 2 ml (Box of 1)</label>
+                </value>
+                <value>
+                    <fullName>Hyoscine (Buscopan) 10mg (Box of 56)</fullName>
+                    <default>false</default>
+                    <label>Hyoscine (Buscopan) 10mg (Box of 56)</label>
+                </value>
+                <value>
+                    <fullName>Hyoscine (Buscopan) 20mg/ml (Box of 10)</fullName>
+                    <default>false</default>
+                    <label>Hyoscine (Buscopan) 20mg/ml (Box of 10)</label>
+                </value>
+                <value>
+                    <fullName>Ibuprofen 400mg (Box of 84)</fullName>
+                    <default>false</default>
+                    <label>Ibuprofen 400mg (Box of 84)</label>
+                </value>
+                <value>
+                    <fullName>Ibuprofen gel (Ibuleve)</fullName>
+                    <default>false</default>
+                    <label>Ibuprofen gel (Ibuleve)</label>
+                </value>
+                <value>
+                    <fullName>Instillagel 2%</fullName>
+                    <default>false</default>
+                    <label>Instillagel 2%</label>
+                </value>
+                <value>
+                    <fullName>Ipratropium Bromide (Atrovent) 0.25mg/ml</fullName>
+                    <default>false</default>
+                    <label>Ipratropium Bromide (Atrovent) 0.25mg/ml</label>
+                </value>
+                <value>
+                    <fullName>KY Jelly</fullName>
+                    <default>false</default>
+                    <label>KY Jelly</label>
+                </value>
+                <value>
+                    <fullName>Lactulose Mixture 300ml</fullName>
+                    <default>false</default>
+                    <label>Lactulose Mixture 300ml</label>
+                </value>
+                <value>
+                    <fullName>Lemsip Max Cold And Flu Capsules (box of 16)</fullName>
+                    <default>false</default>
+                    <label>Lemsip Max Cold And Flu Capsules (box of 16)</label>
+                </value>
+                <value>
+                    <fullName>Lemsip Max Cold And Flu Sachets (box of 10)</fullName>
+                    <default>false</default>
+                    <label>Lemsip Max Cold And Flu Sachets (box of 10)</label>
+                </value>
+                <value>
+                    <fullName>Lignocaine 20ml Plain 1%</fullName>
+                    <default>false</default>
+                    <label>Lignocaine 20ml Plain 1%</label>
+                </value>
+                <value>
+                    <fullName>Lip Salve (Box of 30)</fullName>
+                    <default>false</default>
+                    <label>Lip Salve (Box of 30)</label>
+                </value>
+                <value>
+                    <fullName>Loperamide Capsules (Imodium) 4mg</fullName>
+                    <default>false</default>
+                    <label>Loperamide Capsules (Imodium) 4mg</label>
+                </value>
+                <value>
+                    <fullName>Loratadine (box of 30) 10 mg</fullName>
+                    <default>false</default>
+                    <label>Loratadine (box of 30) 10 mg</label>
+                </value>
+                <value>
+                    <fullName>Malathion Lotion (Quellada M)</fullName>
+                    <default>false</default>
+                    <label>Malathion Lotion (Quellada M)</label>
+                </value>
+                <value>
+                    <fullName>Mebendazole  (Vermox) 100mg</fullName>
+                    <default>false</default>
+                    <label>Mebendazole  (Vermox) 100mg</label>
+                </value>
+                <value>
+                    <fullName>Mebeverine   (Colofac) 135mg</fullName>
+                    <default>false</default>
+                    <label>Mebeverine   (Colofac) 135mg</label>
+                </value>
+                <value>
+                    <fullName>Medication Name</fullName>
+                    <default>false</default>
+                    <label>Medication Name</label>
+                </value>
+                <value>
+                    <fullName>Metoclopramide Hydrochloride Inj  10mg in 2ml</fullName>
+                    <default>false</default>
+                    <label>Metoclopramide Hydrochloride Inj  10mg in 2ml</label>
+                </value>
+                <value>
+                    <fullName>Metronidazole 400mg</fullName>
+                    <default>false</default>
+                    <label>Metronidazole 400mg</label>
+                </value>
+                <value>
+                    <fullName>Midazolam ampoule 1ml (= 5mg)</fullName>
+                    <default>false</default>
+                    <label>Midazolam ampoule 1ml (= 5mg)</label>
+                </value>
+                <value>
+                    <fullName>Migraleve (Pink &amp; Yellow tablets)</fullName>
+                    <default>false</default>
+                    <label>Migraleve (Pink &amp; Yellow tablets)</label>
+                </value>
+                <value>
+                    <fullName>Morphine Sulphate Inj 10mg in 1 ml</fullName>
+                    <default>false</default>
+                    <label>Morphine Sulphate Inj 10mg in 1 ml</label>
+                </value>
+                <value>
+                    <fullName>Mycil Ointment 25mg</fullName>
+                    <default>false</default>
+                    <label>Mycil Ointment 25mg</label>
+                </value>
+                <value>
+                    <fullName>Mycil Powder 55g</fullName>
+                    <default>false</default>
+                    <label>Mycil Powder 55g</label>
+                </value>
+                <value>
+                    <fullName>Naloxone 0.4mg/1 ml</fullName>
+                    <default>false</default>
+                    <label>Naloxone 0.4mg/1 ml</label>
+                </value>
+                <value>
+                    <fullName>Naproxen 250mg</fullName>
+                    <default>false</default>
+                    <label>Naproxen 250mg</label>
+                </value>
+                <value>
+                    <fullName>Nitrofurantoin 50mg</fullName>
+                    <default>false</default>
+                    <label>Nitrofurantoin 50mg</label>
+                </value>
+                <value>
+                    <fullName>Olbas Oil Inhalant Decongestant 10ml</fullName>
+                    <default>false</default>
+                    <label>Olbas Oil Inhalant Decongestant 10ml</label>
+                </value>
+                <value>
+                    <fullName>Omeprazole 20mg</fullName>
+                    <default>false</default>
+                    <label>Omeprazole 20mg</label>
+                </value>
+                <value>
+                    <fullName>Omeprazole Inj 40mg</fullName>
+                    <default>false</default>
+                    <label>Omeprazole Inj 40mg</label>
+                </value>
+                <value>
+                    <fullName>Optrex Multi Action Eye Wash 100ml</fullName>
+                    <default>false</default>
+                    <label>Optrex Multi Action Eye Wash 100ml</label>
+                </value>
+                <value>
+                    <fullName>Otrivine Xylometazoline</fullName>
+                    <default>false</default>
+                    <label>Otrivine Xylometazoline</label>
+                </value>
+                <value>
+                    <fullName>Paracetamol 500mg (Box of 100)</fullName>
+                    <default>false</default>
+                    <label>Paracetamol 500mg (Box of 100)</label>
+                </value>
+                <value>
+                    <fullName>Paracetamol IV</fullName>
+                    <default>false</default>
+                    <label>Paracetamol IV</label>
+                </value>
+                <value>
+                    <fullName>Penicillin V 250 mg (Box of 28)</fullName>
+                    <default>false</default>
+                    <label>Penicillin V 250 mg (Box of 28)</label>
+                </value>
+                <value>
+                    <fullName>Permethrin Dermal Cream (Lyclear) 30g</fullName>
+                    <default>false</default>
+                    <label>Permethrin Dermal Cream (Lyclear) 30g</label>
+                </value>
+                <value>
+                    <fullName>Phytomenadione Inj 10mg/ml (Box of 5)</fullName>
+                    <default>false</default>
+                    <label>Phytomenadione Inj 10mg/ml (Box of 5)</label>
+                </value>
+                <value>
+                    <fullName>Prednisolone  EC 5mg (Box of 28)</fullName>
+                    <default>false</default>
+                    <label>Prednisolone  EC 5mg (Box of 28)</label>
+                </value>
+                <value>
+                    <fullName>Prochlorperazine  (Buccastem) 3mg (Box of 50)</fullName>
+                    <default>false</default>
+                    <label>Prochlorperazine  (Buccastem) 3mg (Box of 50)</label>
+                </value>
+                <value>
+                    <fullName>Prochlorperazine  (Stemetil) 5mg (Box of 28)</fullName>
+                    <default>false</default>
+                    <label>Prochlorperazine  (Stemetil) 5mg (Box of 28)</label>
+                </value>
+                <value>
+                    <fullName>Prochlorperazine  12.5mg/1 ml (Box of 10)</fullName>
+                    <default>false</default>
+                    <label>Prochlorperazine  12.5mg/1 ml (Box of 10)</label>
+                </value>
+                <value>
+                    <fullName>Procyclidine Inj 10 mg in 2 ml (Box of 5)</fullName>
+                    <default>false</default>
+                    <label>Procyclidine Inj 10 mg in 2 ml (Box of 5)</label>
+                </value>
+                <value>
+                    <fullName>Pseudoephedrine  (Sudafed) 60mg (Box of 12)</fullName>
+                    <default>false</default>
+                    <label>Pseudoephedrine  (Sudafed) 60mg (Box of 12)</label>
+                </value>
+                <value>
+                    <fullName>Ralgex Cream 40g</fullName>
+                    <default>false</default>
+                    <label>Ralgex Cream 40g</label>
+                </value>
+                <value>
+                    <fullName>Revaxis Tetanus/ Diptheria/Polio (pre filled syringe)</fullName>
+                    <default>false</default>
+                    <label>Revaxis Tetanus/ Diptheria/Polio (pre filled syringe)</label>
+                </value>
+                <value>
+                    <fullName>Salbutamol Inhaler (Ventolin)</fullName>
+                    <default>false</default>
+                    <label>Salbutamol Inhaler (Ventolin)</label>
+                </value>
+                <value>
+                    <fullName>Salbutamol Nebules -  (Ventolin) 5mg/2.5ml</fullName>
+                    <default>false</default>
+                    <label>Salbutamol Nebules -  (Ventolin) 5mg/2.5ml</label>
+                </value>
+                <value>
+                    <fullName>Salicylic Acid 17% Topical Paint</fullName>
+                    <default>false</default>
+                    <label>Salicylic Acid 17% Topical Paint</label>
+                </value>
+                <value>
+                    <fullName>Simple Linctus 200ml</fullName>
+                    <default>false</default>
+                    <label>Simple Linctus 200ml</label>
+                </value>
+                <value>
+                    <fullName>Sodium Chloride 0.9% 10ml</fullName>
+                    <default>false</default>
+                    <label>Sodium Chloride 0.9% 10ml</label>
+                </value>
+                <value>
+                    <fullName>Sodium Chloride 0.9% 500 ml</fullName>
+                    <default>false</default>
+                    <label>Sodium Chloride 0.9% 500 ml</label>
+                </value>
+                <value>
+                    <fullName>Sodium Chloride Minims 0.9% - Eye Drops</fullName>
+                    <default>false</default>
+                    <label>Sodium Chloride Minims 0.9% - Eye Drops</label>
+                </value>
+                <value>
+                    <fullName>Sodium Citrate Micro-Enema (Box of 12)</fullName>
+                    <default>false</default>
+                    <label>Sodium Citrate Micro-Enema (Box of 12)</label>
+                </value>
+                <value>
+                    <fullName>Sofradex Ear Drop 10ml</fullName>
+                    <default>false</default>
+                    <label>Sofradex Ear Drop 10ml</label>
+                </value>
+                <value>
+                    <fullName>Strepsils Throat Lozenges (pkts of 24)</fullName>
+                    <default>false</default>
+                    <label>Strepsils Throat Lozenges (pkts of 24)</label>
+                </value>
+                <value>
+                    <fullName>Sumatriptan  50mg (Box of 6)</fullName>
+                    <default>false</default>
+                    <label>Sumatriptan  50mg (Box of 6)</label>
+                </value>
+                <value>
+                    <fullName>Syntometrine  (Pk 5) Amp 1 ml</fullName>
+                    <default>false</default>
+                    <label>Syntometrine  (Pk 5) Amp 1 ml</label>
+                </value>
+                <value>
+                    <fullName>Tenecteplase  IV Inj 50mg</fullName>
+                    <default>false</default>
+                    <label>Tenecteplase  IV Inj 50mg</label>
+                </value>
+                <value>
+                    <fullName>Terbutaline 0.5mg/1ml</fullName>
+                    <default>false</default>
+                    <label>Terbutaline 0.5mg/1ml</label>
+                </value>
+                <value>
+                    <fullName>Tranexamic Acid 100mg/ml: 5ml (Box of 5)</fullName>
+                    <default>false</default>
+                    <label>Tranexamic Acid 100mg/ml: 5ml (Box of 5)</label>
+                </value>
+                <value>
+                    <fullName>Trimethoprim 200mg (Box of 14)</fullName>
+                    <default>false</default>
+                    <label>Trimethoprim 200mg (Box of 14)</label>
+                </value>
+                <value>
+                    <fullName>Tropicamide Minims Eye Drops 1% (Box of 20)</fullName>
+                    <default>false</default>
+                    <label>Tropicamide Minims Eye Drops 1% (Box of 20)</label>
+                </value>
+                <value>
+                    <fullName>Vaseline Essential Moisture Dry Skin Lotion</fullName>
+                    <default>false</default>
+                    <label>Vaseline Essential Moisture Dry Skin Lotion</label>
+                </value>
+                <value>
+                    <fullName>Videne Povidone-Iodine 10% in Aqueous Solution (Antiseptic Solution)</fullName>
+                    <default>false</default>
+                    <label>Videne Povidone-Iodine 10% in Aqueous Solution (Antiseptic Solution)</label>
+                </value>
+                <value>
+                    <fullName>Water For Injection BP 10 ml (Box of 20)</fullName>
+                    <default>false</default>
+                    <label>Water For Injection BP 10 ml (Box of 20)</label>
+                </value>
+                <value>
+                    <fullName>White Soft Paraffin BP - 500 g</fullName>
+                    <default>false</default>
+                    <label>White Soft Paraffin BP - 500 g</label>
+                </value>
+                <value>
+                    <fullName>Zolpidem 5mg (Box of 28)</fullName>
+                    <default>false</default>
+                    <label>Zolpidem 5mg (Box of 28)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+</CustomObject>
