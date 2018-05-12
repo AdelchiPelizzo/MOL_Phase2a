@@ -7,12 +7,13 @@
     <aura:attribute name="newInventory" type="Inventory__c"/>
     <aura:attribute name="simpleNewInventory" type="Inventory__c"/>
     <aura:attribute name="newInventoryError" type="String"/>
-    <aura:attribute name="InventoryName" type="String"/>
+    <aura:attribute name="InventoryName" type="object" access="public"/>
     <aura:attribute name="InventoryQty" type="Integer"/>
     <aura:attribute name="BatchNr" type="String"/>
     <aura:attribute name="ExpirationDate" type="String"/>
     <aura:attribute name="Quantity" type="Integer"/>
     <aura:attribute name="medicationNames" type="String[]"/>
+    <aura:attribute name="medicationName" type="String"/>
     <aura:attribute name="consumablesNames" type="String[]"/>
     <aura:attribute name="consumableName" type="String"/>
     <aura:attribute name="consQty" type="Integer"/>
@@ -47,16 +48,19 @@
                     <td>
                         <div class="slds-text-heading_medium slds-m-left--large slds-m-top--x-large">Medications</div>
                         <div class="slds-m-around--xx-large" style="background-color: #fdf3e8">
-                            <div class="slds-box">
-                                <lightning:select name="MedicationNames" label="Select Item" aura:id="MedSelect" onchange="{!c.setMedicationName}">
-                                    <option></option>
-                                    <aura:iteration items="{!v.medicationNames}" var="item">
-                                        <option text="{!item.label}" value="{!item.value}" selected="{!item.selected}">{!item}</option>
-                                    </aura:iteration>
-                                </lightning:select>
+                            <div class="slds-box" >
+                                <label>Medication</label>
+                                <c:Lookup objectName="Inventory_Required__c"
+                                              field_API_text="Name"
+                                              field_API_val="Id"
+                                              limit="4"
+                                              field_API_search="Name"
+                                              lookupIcon="custom:custom58"
+                                              selItem="{!v.InventoryName}"
+                                              placeholder="Select Medication"/>
                             </div>
                             <div class="slds-box">
-                                <ui:inputNumber aura:id="MedSelect1" label="Quantity" format=".0" value="{!v.InventoryQty}" updateOn="keyup"/>
+                                <ui:inputNumber aura:id="InventoryQty" format="."  label="Quantity" value="{!v.InventoryQty}" updateOn="keyup"/>
                             </div>
                             <div class="slds-box">
                                 <ui:inputText aura:id="MedSelect2" label="Batch Number" value="{!v.BatchNr}" updateOn="change"/>
@@ -81,8 +85,8 @@
                                     </aura:iteration>
                                 </lightning:select>
                             </div>
-                            <div class="slds-box">
-                                <ui:inputNumber label="Quantity" format=".0" value="{!v.consQty}" updateOn="keyup"/>
+                            <div class="slds-box"> <!--format=".0"-->
+                                <ui:inputNumber label="Quantity" value="{!v.consQty}" updateOn="keyup"/>
                             </div>
                             <div class="slds-box">
                                 <ui:inputText label="Batch Number" value="{!v.consBatchNr}" updateOn="change"/>

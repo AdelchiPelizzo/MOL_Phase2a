@@ -6,23 +6,28 @@ public with sharing class InventoryManagementCtrl {
     public static Inventory__c newInventory;
     public static List<String> inventoryNames;
     public static List<String> consumablesNames;
+    public static Inventory_Required__c invReq;
 
     @AuraEnabled
-    public static void addItems(String Name, Decimal Quantity, String batchNumber, String expireDate){
+    public static void addItems(String medId, Decimal Quantity, String batchNumber, String expireDate){
+        system.debug(medId);
+        system.debug(Quantity);
+        system.debug(batchNumber);
+        system.debug(expireDate);
         Date expiringDate = date.valueOf(expireDate);
         String userId = userInfo.getUserId();
         String contactId = [SELECT ContactId FROM User WHERE Id =: userId LIMIT 1].ContactId;
         String siteId = [SELECT Site__c FROM Contact WHERE Id =: contactId LIMIT 1].Site__c;
-        system.debug(Name);
-        system.debug(Quantity);
-        system.debug(batchNumber);
-        system.debug(expireDate);
+        String medName = [SELECT Name FROM Inventory_Required__c WHERE Id =: medId LIMIT 1].Name;
+        invReq = [SELECT Name, Doses_per_Item__c, Group__c FROM Inventory_Required__c WHERE Id =: medId LIMIT 1];
+        system.debug(medName);
         if(!(Quantity <= 1)){
             List<Inventory__c> newInventories = new List<Inventory__c>();
             system.debug('Inside first Loop');
             for(Integer i=0; i<Quantity; i++ ){
                 Inventory__c newInventory  = new Inventory__c();
-                newInventory.Name = Name;
+                newInventory.Total_Doses__c = invReq.Doses_per_Item__c;
+                newInventory.Name = medName;
                 newInventory.Batch_Number__c = batchNumber;
                 newInventory.Expiration_Date__c = expiringDate;
                 newInventory.SiteName__c = siteId;
@@ -32,7 +37,8 @@ public with sharing class InventoryManagementCtrl {
             insert newInventories;
         }else{
             system.debug('Inside second Loop');
-            newInventory.Name = Name;
+            newInventory.Total_Doses__c = invReq.Doses_per_Item__c;
+            newInventory.Name = medName;
             newInventory.Batch_Number__c = batchNumber;
             newInventory.Expiration_Date__c = expiringDate;
             newInventory.SiteName__c = siteId;

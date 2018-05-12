@@ -11,7 +11,7 @@
             console.log('Start Callback'+state);
             if (state === "SUCCESS") {
                 console.log('Inside Callback');
-                component.set("v.medicationNames", response.getReturnValue());
+                /*component.set("v.medicationNames", response.getReturnValue());*/
                 console.log('Return Value Callback'+JSON.stringify(response.getReturnValue()));
             }
             else if (state === "INCOMPLETE") {
@@ -78,7 +78,9 @@
         component.set("v.ExpirationDate", exDate);
     },
     addItem: function(component, event, helper) {
-        var invName = component.get("v.InventoryName");
+        var invId = component.get("v.InventoryName.val");
+        console.log(invId);
+        var invName = component.get("v.InventoryName.text");
         console.log(invName);
         var invQty = component.get("v.InventoryQty");
         console.log(invQty);
@@ -87,7 +89,8 @@
         var exDat = component.get("v.ExpirationDate");
         console.log(exDat);
         var action = component.get("c.addItems");
-        action.setParams({ Name : invName, Quantity : invQty, batchNumber : batchNr, expireDate : exDat });
+        action.setParams({ medId : invId, Quantity : invQty, batchNumber : batchNr, expireDate : exDat });
+        console.log(action.getParams());
         action.setCallback(this, function(response) {
             console.log("inside call back started");
             var state = response.getState();
@@ -119,8 +122,7 @@
             }
         });
         $A.enqueueAction(action);
-        component.find("MedSelect").set("v.value", "");
-        component.find("MedSelect1").set("v.value", "");
+        component.find("InventoryQty").set("v.value", "");
         component.find("MedSelect2").set("v.value", "");
         component.find("MedSelect3").set("v.value", "");
     },

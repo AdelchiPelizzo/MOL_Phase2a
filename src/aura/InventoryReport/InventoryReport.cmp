@@ -1,0 +1,119 @@
+<!--
+ - Created by Adelchi on 07/05/2018.
+ -->
+
+<aura:component description="InventoryReport" controller="InventoryReportCtrl"  implements="forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="report" type="Object[]" access="global"/>
+    <aura:attribute Name="selItem2" type="object"  access="public" />
+    <aura:attribute name="batchNum" type="String"/>
+    <aura:attribute name="medicationName" type="String"/>
+    <aura:attribute name="sum" type="Integer" />
+    <aura:attribute name="sum2" type="Integer" />
+    <div class="slds-m-top--x-large">
+        <div class="slds-m-around--x-large">
+            <div class="slds-medium-size--1-of-2">
+                <c:LookupInvReq objectName="Inventory_Required__c"
+                                field_API_text="Name"
+                                field_API_val="Id"
+                                limit="4"
+                                field_API_search="Name"
+                                lookupIcon="custom:custom58"
+                                selItem="{!v.selItem2}"
+                                placeholder="Select Medication"/>
+            </div>
+            <div class="slds-m-top--x-large">
+                <lightning:button variant="neutral" label="Get Report" iconName="utility:download" iconPosition="left" onclick="{! c.getReport }" />
+            </div>
+        </div>
+    </div>
+    <div class="slds-m-around--x-large slds-p-bottom--x-large">
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+            <tr class="slds-text-title_caps">
+               <!-- <th scope="col">
+                    <div class="slds-truncate" title="Number of Boxes required">Number of Boxes required</div>
+                </th>-->
+                <th scope="col">
+                    <div class="slds-truncate" title="Number of Existing Boxes" >Number of Existing Boxes</div>
+                </th><!--
+                <th scope="col">
+                    <div class="slds-truncate" title="Number of Required Doses">Number of Required Doses</div>
+                </th>-->
+                <th scope="col">
+                    <div class="slds-truncate" title="Number of Existing Doses">Number of Existing Doses</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Expiration date">Expiration date</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Batch Number">Batch Number</div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <aura:iteration var="rep" items="{!v.report}" indexVar="id" >
+                <tr><!--
+                    <th scope="row" data-label="Opportunity Name">
+                        <div class="slds-truncate" title="BoxesRequired"><a href="javascript:void(0);">{!rep.InvRequiredQty}</a></div>
+                    </th>-->
+                    <td data-label="Account Name">
+                        <div class="slds-truncate" title="TotalBoxes" >{!rep.totBoxByNam}</div>
+                    </td><!--
+                    <td data-label="Close Date">
+                        <div class="slds-truncate" title="DosesRequired">{!rep.inventoryReqDose}</div>
+                    </td>-->
+                    <td data-label="Prospecting">
+                        <div class="slds-truncate" title="TotalDoses">{!rep.totalDoseName}</div>
+                    </td>
+                    <td data-label="Confidence">
+                        <div class="slds-truncate" title="Expiration">{!rep.expDate}</div>
+                    </td>
+                    <td data-label="Amount">
+                        <div class="slds-truncate" title="BatchNumber">{!rep.batchNumber}</div>
+                    </td>
+                </tr>
+            </aura:iteration>
+            </tbody>
+            <thead>
+            <tr class="slds-text-title_caps">
+                <th scope="col">
+                    <div class="slds-truncate" title="Total Number of Required Boxes" >Total Number of Required Boxes</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Total Number of Required Doses" >Total Number of Required Doses</div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                        {!v.report[0].InvRequiredQty}
+                </td>
+                <td>
+                        {!v.report[0].inventoryReqDose}
+                </td>
+            </tr>
+            </tbody>
+            <thead>
+            <tr class="slds-text-title_caps">
+                <th scope="col">
+                    <div class="slds-truncate" title="Total Number of Required Boxes" >Total Number of Existing Boxes</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Total Number of Required Doses" >Total Number of Existing Doses</div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                        {!v.sum}
+                </td>
+                <td>
+                        {!v.sum2}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</aura:component>
